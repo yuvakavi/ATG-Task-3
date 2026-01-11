@@ -52,13 +52,25 @@ data/avatar_assets/textures/
 data/test_inputs/audio/
 data/test_inputs/expected/
 
-# Output
+# Generated Output Files
 output/
 results/
 *.png
 *.jpg
+*.jpeg
 *.mp4
 *.avi
+*.gif
+*.webm
+demo/*.mp4
+demo/*.avi
+demo/*.gif
+demo/*.wav
+avatar_*.png
+*_result*.png
+submission_*.mp4
+submission_*.avi
+submission_*.gif
 
 # Logs
 logs/
