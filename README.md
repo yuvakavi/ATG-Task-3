@@ -32,6 +32,16 @@ Motion Model (Separate nets) → Head (3D) + Eye (2D) motion
 Neural Renderer (PIL) → RGB Frame (256×256)
 ```
 
+## 🎬 Demo Output
+
+### Generated Avatar
+![Avatar Demo](demo/avatar_demo.png)
+
+### Video Generation
+![Avatar Animation](demo/avatar_demo.gif)
+
+*3-second talking avatar generated from speech-like audio at 30 FPS*
+
 ## 📦 Installation
 
 ```bash
