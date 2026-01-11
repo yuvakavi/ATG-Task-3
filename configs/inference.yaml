@@ -1,0 +1,3 @@
+device: cuda
+precision: fp16
+batch_size: 1
