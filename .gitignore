@@ -52,30 +52,29 @@ data/avatar_assets/textures/
 data/test_inputs/audio/
 data/test_inputs/expected/
 
-# Generated Output Files (except demo examples)
+# Generated Output Files (excluding examples)
 output/
 results/
-*.png
-*.jpg
-*.jpeg
-*.mp4
-*.avi
-*.gif
-*.webm
 avatar_*.png
 *_result*.png
 submission_*.mp4
 submission_*.avi
 submission_*.gif
 
-# Allow demo files for showcase
+# Allow example outputs in demo folder
 !demo/demo_audio.wav
-!demo/avatar_demo.png
-!demo/avatar_video.mp4
-!demo/avatar_demo.gif
-!examples/*.png
+!demo/avatar_sample.png
+!demo/example_output1.png
+!demo/example_output2.png
+!demo/talking_avatar.mp4
+!demo/talking_avatar.gif
+
+# Allow test audio samples
 !data/audio_samples/test_sample.wav
 !data/audio_samples/test_sample2.wav
+submission_*.mp4
+submission_*.avi
+submission_*.gif
 
 # Logs
 logs/
