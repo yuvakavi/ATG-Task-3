@@ -1,0 +1,13 @@
+# Development Dependencies
+pytest
+pytest-cov
+black
+flake8
+mypy
+jupyter
+notebook
+tensorboard
+
+# Documentation
+sphinx
+sphinx-rtd-theme

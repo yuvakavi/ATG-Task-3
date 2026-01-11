@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avatar-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: avatar-system
+  template:
+    metadata:
+      labels:
+        app: avatar-system
+    spec:
+      containers:
+      - name: avatar-system
+        image: avatar-system:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+          requests:
+            memory: "4Gi"
+            cpu: "2"
+        env:
+        - name: CUDA_VISIBLE_DEVICES
+          value: "0"

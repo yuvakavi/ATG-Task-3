@@ -1,0 +1,28 @@
+
+# Deep Learning
+torch
+torchaudio
+torchvision
+
+# Audio Processing
+numpy
+scipy
+librosa
+
+# Computer Vision
+opencv-python
+mediapipe
+
+# Web API
+fastapi
+uvicorn
+python-multipart
+
+# Model Export & Optimization
+onnxruntime-gpu
+
+# Configuration
+pyyaml
+
+# Utilities
+Pillow

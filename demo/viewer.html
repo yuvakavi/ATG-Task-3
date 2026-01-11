@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking Avatar Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .video-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        video, img {
+            width: 100%;
+            max-width: 512px;
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .format-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .format-btn {
+            background: #2196F3;
+        }
+        .format-btn:hover {
+            background: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Talking Avatar Viewer</h1>
+        
+        <div class="info">
+            <h3>ℹ️ About This Demo</h3>
+            <p>This page displays the generated talking avatar in multiple formats for maximum compatibility.</p>
+            <ul>
+                <li><strong>MP4</strong>: Modern format, best quality</li>
+                <li><strong>AVI</strong>: High compatibility with media players</li>
+                <li><strong>GIF</strong>: Works everywhere, including browsers</li>
+            </ul>
+        </div>
+
+        <div class="format-options">
+            <button class="format-btn" onclick="showFormat('mp4')">MP4 Video</button>
+            <button class="format-btn" onclick="showFormat('avi')">AVI Video</button>
+            <button class="format-btn" onclick="showFormat('gif')">Animated GIF</button>
+        </div>
+
+        <div id="mp4-section" class="video-section">
+            <h2>MP4 Format</h2>
+            <video controls loop autoplay muted id="mp4-video">
+                <source src="talking_avatar.mp4" type="video/mp4">
+                Your browser doesn't support MP4 video.
+            </video>
+            <div class="controls">
+                <button onclick="document.getElementById('mp4-video').play()">▶️ Play</button>
+                <button onclick="document.getElementById('mp4-video').pause()">⏸️ Pause</button>
+                <button onclick="document.getElementById('mp4-video').currentTime = 0">⏮️ Restart</button>
+            </div>
+        </div>
+
+        <div id="avi-section" class="video-section" style="display:none;">
+            <h2>AVI Format</h2>
+            <video controls loop autoplay muted id="avi-video">
+                <source src="talking_avatar.avi" type="video/x-msvideo">
+                Your browser doesn't support AVI video.
+            </video>
+            <div class="controls">
+                <button onclick="document.getElementById('avi-video').play()">▶️ Play</button>
+                <button onclick="document.getElementById('avi-video').pause()">⏸️ Pause</button>
+                <button onclick="document.getElementById('avi-video').currentTime = 0">⏮️ Restart</button>
+            </div>
+        </div>
+
+        <div id="gif-section" class="video-section" style="display:none;">
+            <h2>Animated GIF</h2>
+            <img src="talking_avatar.gif" alt="Talking Avatar Animation">
+            <p style="text-align: center;">GIF loops automatically</p>
+        </div>
+
+        <div class="info">
+            <h3>🎨 Avatar Features</h3>
+            <ul>
+                <li>👤 Face with skin tone that moves with head motion</li>
+                <li>👀 Eyes with pupils that track based on motion</li>
+                <li>👃 Center-placed nose</li>
+                <li>👄 Mouth that opens/closes with speech</li>
+                <li>✏️ Eyebrows that raise/lower with expression</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>📊 Technical Details</h3>
+            <p><strong>Resolution:</strong> 256x256 pixels</p>
+            <p><strong>Frame Rate:</strong> 30 FPS</p>
+            <p><strong>Duration:</strong> 3 seconds (90 frames)</p>
+            <p><strong>Audio Sample Rate:</strong> 16kHz</p>
+        </div>
+    </div>
+
+    <script>
+        function showFormat(format) {
+            // Hide all sections
+            document.getElementById('mp4-section').style.display = 'none';
+            document.getElementById('avi-section').style.display = 'none';
+            document.getElementById('gif-section').style.display = 'none';
+            
+            // Show selected section
+            document.getElementById(format + '-section').style.display = 'block';
+            
+            // Pause other videos
+            if (format !== 'mp4') {
+                document.getElementById('mp4-video').pause();
+            }
+            if (format !== 'avi') {
+                document.getElementById('avi-video').pause();
+            }
+        }
+    </script>
+</body>
+</html>
