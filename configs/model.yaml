@@ -1,0 +1,5 @@
+speech_encoder: wav2vec2
+expression_model: transformer
+motion_model: mlp
+renderer: neural
+fps: 30
